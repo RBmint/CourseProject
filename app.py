@@ -260,7 +260,7 @@ class TwitterStreamListener(tweepy.StreamListener):
     Creates a Twitter stream object.
     '''
 
-    def __init__(self, topic = None, classifier = None, save_to_file = False, time_limit = 20, visualize = False):
+    def __init__(self, topic = None, classifier = None, time_limit = 20, visualize = False):
 
         self.predictions = list()
         self.limit = time_limit
@@ -271,12 +271,9 @@ class TwitterStreamListener(tweepy.StreamListener):
         else:
             self.model = classifier
 
-        self.save_to_file = save_to_file
         self.visualize = visualize
         self.topic = topic
 
-        if self.save_to_file:
-            self.open_file = open('TweetStreamAnalysis.txt', 'w')
 
         super(TwitterStreamListener, self).__init__()
 
@@ -294,19 +291,11 @@ class TwitterStreamListener(tweepy.StreamListener):
             print('Tweet: {}'.format(data.text))
             print(summary)
 
-            if self.save_to_file:
-                self.open_file.write('Tweet: {}\n'.format(data.text))
-                self.open_file.write(summary)
-
             time.sleep(0.25) # This sleep ensures that the stdout is not flooded with tweets.
             return True
         else:
-            if self.save_to_file:
-                self.open_file.close()
-                logging.info('File saved as TweetStreamAnalysis.txt')
-
             if self.visualize:
-                self.model.visualize(self.predictions, title = self.topic, save_to_file = self.save_to_file)
+                self.model.visualize(self.predictions, title = self.topic)
 
             return False
     
@@ -337,13 +326,13 @@ if __name__ == '__main__':
 
         # Initialize classifier
         model = Classifier()
-        model.process_data(data = tweets, user = args.user, save_to_file = args.file, visualize = args.visualize)
+        model.process_data(data = tweets, user = args.user, visualize = args.visualize)
 
     if args.stream:
         tw_connection = Twitter()
 
         # Initialize stream object
-        streamListener = TwitterStreamListener(topic = args.stream, save_to_file = args.file, time_limit = args.time, visualize = args.visualize)
+        streamListener = TwitterStreamListener(topic = args.stream, time_limit = args.time, visualize = args.visualize)
         stream = tweepy.Stream(auth = tw_connection.api.auth, listener = streamListener)
         stream.filter(track = args.stream)
 
