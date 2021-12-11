@@ -1,5 +1,0 @@
-Tweet: @SethMcKinn @dwcprodz It would be nice if Fields could actually throw. This Mooney kid always catches my eye when I¡­ https://t.co/Z5vzjLPx0N
-LogisticRegression: Positive
-NaiveBayes: Negative
-NeuralNetwork: Negative
-Prediction: Negative with a probability of 60.0%

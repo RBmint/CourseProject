@@ -1,24 +1,7 @@
 
 '''
 
-CS410 Final Project, UIUC - Fall 2019
-Team Wolfram
-@Authors: 
-    - Pranav Velamakanni (pranavv2@illinois.edu)
-    - Tarik Koric (koric1@illinois.edu)
-
-Summary:
-    Requirements: Python 3+
-    Modules: see README.md for a complete list
-
-This project aims to provide sentiment analysis on live tweets fetched from Twitter. 
-The prediction is based on 3 models trained by us using a set of 1.6 million tweets.
-All the below models have been trained and pickled to a file which is imported here.
-Refer to TrainModel.ipynb for the training code.
-
-# LogisticRegression - Accuracy ~ 77%
-# Naive-Bayes - Accuracy ~ 76%
-# Neural Network (single layer with 100 units) - Accuracy ~ 71%
+CS410 Final Project - Fall 2021
 
 '''
 
@@ -30,7 +13,6 @@ import time
 from collections import Counter
 
 from tweepy import OAuthHandler
-from tweepy import StreamListener
 import tweepy
 from nltk.corpus import stopwords # nltk.download('stopwords') before importing
 from nltk.stem import PorterStemmer
@@ -343,9 +325,9 @@ if __name__ == '__main__':
     group.add_argument('--user', '-u', type=str, default=None, help='Twitter username to fetch tweets')
     group.add_argument('--stream', nargs='+', type=str, default=None, help='Stream a list of topics from Twitter')
     parser.add_argument('--file', action='store_true', default=False, help='Store tweets and analysis from stream to file')
-    parser.add_argument('--visualize', action='store_true', default=False, help='Provides a pie chart with a summary of predictions')
+    parser.add_argument('--visualize', '-v', action='store_true', default=False, help='Provides a pie chart with a summary of predictions')
     parser.add_argument('--count', '-c', type=lambda x : 200 if int(x) > 200 else abs(int(x)), default=10, help='Number of tweets to fetch')
-    parser.add_argument('--time', type=int, default=5, help='Time to stream a topic')
+    parser.add_argument('--time', '-t', type=int, default=5, help='Time to stream a topic')
 
     args = parser.parse_args()
 

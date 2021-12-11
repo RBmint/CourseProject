@@ -1,6 +1,4 @@
 *.csv
-*.zip
-df-cleaned-final.pickle
 .vscode/
 .ipynb_checkpoints/
 __pycache__/
