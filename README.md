@@ -69,7 +69,7 @@ Install stopwords:  `python -c "import nltk; nltk.download('stopwords')"`
     - Stream tweets for a list of topics
         - `--stream` - list of topics to fetch live tweets from Twitter and perform analysis (example - "illinois" "football")
         - `--time` or `-t` - total duration of the stream in seconds (example - 10, defaults to 5)
-        - `--visualize` or `-v` - visualizes the predictions using a pie chart. Saves to file when `--file` flag is used
+        - `--visualize` or `-v` - visualizes the predictions using a pie chart.
 
 ### Examples
 
@@ -90,3 +90,4 @@ Install stopwords:  `python -c "import nltk; nltk.download('stopwords')"`
 
 ### Software Usage tutorial
 Please see the link below:
+https://drive.google.com/file/d/1YjGNmhE63XVLJRw_414mOsBBqZgNmJem/view?usp=sharing
