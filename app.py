@@ -324,7 +324,6 @@ if __name__ == '__main__':
     group = parser.add_mutually_exclusive_group(required=False)
     group.add_argument('--user', '-u', type=str, default=None, help='Twitter username to fetch tweets')
     group.add_argument('--stream', nargs='+', type=str, default=None, help='Stream a list of topics from Twitter')
-    parser.add_argument('--file', action='store_true', default=False, help='Store tweets and analysis from stream to file')
     parser.add_argument('--visualize', '-v', action='store_true', default=False, help='Provides a pie chart with a summary of predictions')
     parser.add_argument('--count', '-c', type=lambda x : 200 if int(x) > 200 else abs(int(x)), default=10, help='Number of tweets to fetch')
     parser.add_argument('--time', '-t', type=int, default=5, help='Time to stream a topic')

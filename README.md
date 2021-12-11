@@ -39,7 +39,6 @@ Install stopwords:  `python -c "import nltk; nltk.download('stopwords')"`
     - `Test.ipynb` - Notebook containing test code to unpack and load the model for predictions
     - `twitter_analysis.py` - Initial tests using the Twitter API and the trained models
     - `twitter_api.py` - Initial tests setting up the Twitter API
-    - `TweetStreamAnalysis.txt` - Test file containing tweets saved after running a stream
 - `Pickled data/` directory
     - `LR.pickle` - Pickled trained Logistic regression model
     - `naive-bayes.pickle` - Pickled trained Naive Bayes model
@@ -70,7 +69,6 @@ Install stopwords:  `python -c "import nltk; nltk.download('stopwords')"`
     - Stream tweets for a list of topics
         - `--stream` - list of topics to fetch live tweets from Twitter and perform analysis (example - "illinois" "football")
         - `--time` or `-t` - total duration of the stream in seconds (example - 10, defaults to 5)
-        - `--file` - save the tweets and performed analysis to a file named `TweetStreamAnalysis.txt` in the current workspace
         - `--visualize` or `-v` - visualizes the predictions using a pie chart. Saves to file when `--file` flag is used
 
 ### Examples
