@@ -75,7 +75,7 @@ Install stopwords:  `python -c "import nltk; nltk.download('stopwords')"`
 
 ### Examples
 
-#### Using Streams with multiple topics for a period of 5 seconds
+#### Using Streams with multiple topics for a period of 10 seconds
 ```
 ❯ python app.py --stream "illinois" "football" --time 10                                                                                                                                                                ─╯
 ```
@@ -90,3 +90,5 @@ Install stopwords:  `python -c "import nltk; nltk.download('stopwords')"`
 ❯ python app.py --stream "pokemon" "winter" --time 10 --visualize                                                                                                                                                                             ─╯
 ```
 
+### Software Usage tutorial
+Please see the link below:
