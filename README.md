@@ -8,7 +8,7 @@ The task is to pass tweets to the model and predict the sentiment in the tweets.
 It is interesting because we can identify whether people are being positive or negative in their posts.
 The approach is to train models on a certain dataset containing tweets.
 
-### Tools used in this project
+### Tools & libraries used
 
 - `Python 3.7`
 - `Jupyter` - notebooks used to train and test the models
@@ -34,8 +34,8 @@ Install stopwords:  `python -c "import nltk; nltk.download('stopwords')"`
 
 - `app.py` - Main application file that interacts with the tweets and the models
 - `TrainModel.ipynb` - This notebook contains the pre-processing and model training
-- `requirements.txt` - File containing the Python requirements for this project
-- `Test/` directory (Misc: tests performed while testing and tweaking the application)
+- `environment_setup.txt` - File containing the Python requirements for this project
+- `Test/` directory 
     - `Test.ipynb` - Notebook containing test code to unpack and load the model for predictions
     - `twitter_analysis.py` - Initial tests using the Twitter API and the trained models
     - `twitter_api.py` - Initial tests setting up the Twitter API
